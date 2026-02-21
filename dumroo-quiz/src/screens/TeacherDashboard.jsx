@@ -97,7 +97,7 @@ export default function TeacherDashboard() {
     setRunning(true)
     setRunStatus(null)
     try {
-      const res = await fetch('http://localhost:8000/run-predictions', { method: 'POST' })
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/run-predictions`, { method: 'POST' })
       if (res.ok) {
         setRunStatus('success')
         if (selected) fetchStudentSubmissions(selected)
